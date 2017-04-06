@@ -20,9 +20,9 @@
 %    2. Brake Check
 %    3. Friction Check
 
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4161 $
+% $Date: 2017-03-31 15:38:21 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp 2007
 
 function guiHandles=HASSTest(hgs,varargin)
@@ -125,7 +125,7 @@ limits.range = (limits.pos - limits.neg) / 2;
 
 % brake cycling
 pose_brakecycling = [0,-pi/2,0,pi/2,0,0]; %rads
-no_of_brakecycles = 24; %24
+no_of_brakecycles = 4; %24
 
 % start in default pause state
 hass_pause = true;
@@ -171,6 +171,15 @@ text2 = uicontrol(guiHandles.uiPanel,...
     'FontSize',0.4,...
     'String','Robot HASS Test');
 
+text3=uicontrol(guiHandles.uiPanel,...
+    'Style','text',...
+    'Units','Normalized',...
+    'FontUnits','normalized',...
+    'Position',[0.05 0.05 0.4, 0.15],...
+    'String','Failure Alert: ON',...
+    'FontSize',0.4,...
+    'foregroundColor','Red',...
+    'Visible', 'Off');
 % Plots
 % handle for plot1
 plothandle1 = axes(...
@@ -248,7 +257,7 @@ ylabel(plothandle4,'Brake Data');
 %% main HASS function
 
     function hass(hObject,eventdata) %#ok<INUSD>
-        
+      
         try
             erm = []; % init error message to empty
             
@@ -312,6 +321,7 @@ ylabel(plothandle4,'Brake Data');
                             vibErr);
                           log_results(hgs,guiHandles.scriptName,'FAIL',...
                               vibErr);
+                          set(text3,'visible','on');
                         return;
                     end
                 end
@@ -385,7 +395,9 @@ ylabel(plothandle4,'Brake Data');
                     else
                         pass_hass = false;
                         set(text2,'String','Tension Check Failed,.. ;-(')
-                    
+                        set(text3,'visible','On')
+                        set(text3,'String','Failure Alert: Tension Check Failed');
+
                         hass_result.testfailed{count}...
                             = {['tension check, ','Cycle ',num2str(count)]};
                         tensionFailureInCycles = strcat(tensionFailureInCycles, ...
@@ -446,11 +458,13 @@ ylabel(plothandle4,'Brake Data');
                         pause(1);
                     else
                         pass_hass = false;
-                        
+                        set(text3,'visible','on');
                         if isTestCanceled
                             return;
                         end
                         set(text2,'String','Brake Holding Check Failed')
+                        set(text3,'String','Failure Alert: Brake Holding Check Failed');
+
                         hass_result.testfailed{count}...
                             = {['brake check, ','Cycle ',num2str(count)]};
                         brakeFailureInCycles = strcat(brakeFailureInCycles, ...
@@ -531,6 +545,8 @@ ylabel(plothandle4,'Brake Data');
                     else
                         pass_hass = false;
                         set(text2,'String','Friction Check Failed!!!')
+                        set(text3,'visible','on');
+                        set(text3,'String','Failure Alert: Friction Check Failed');
                         hass_result.testfailed{count}...
                             = {['friction check, ','Cycle ',num2str(count)]};
                         frictionFailureInCycles = strcat(frictionFailureInCycles, ...
@@ -548,6 +564,8 @@ ylabel(plothandle4,'Brake Data');
                     end
                     if pass_test == -1
                         pass_hass = false;
+                        set(text3,'visible','on');
+                        
                         resultStr = generateResultString;
                         % enable button so text is black, not gray which doesn't print
                         set(guiHandles.mainButtonInfo,'enable','on');
@@ -586,6 +604,9 @@ ylabel(plothandle4,'Brake Data');
                 return
             else
                 pass_hass = false;
+                set(text3,'visible','on');
+               set(text3,'String','Failure Alert: On ');
+
                 resultStr = generateResultString;
                 % enable button so text is black, not gray which doesn't print
                 set(guiHandles.mainButtonInfo,'enable','on');
@@ -626,6 +647,12 @@ ylabel(plothandle4,'Brake Data');
         end
         % before exiting, go to zerogravity mode
         mode(hgs,'zerogravity','ia_hold_enable',0);
+        
+  
+        if (pass_hass==0)
+            set(text3,'visible','On');
+        end
+
         
     end
 
@@ -704,6 +731,7 @@ function [hass_result,pass,phase_lag, errStr] = tensioncheck(hgs,...
     hass_result,...
     fullDataFileName,...
     phase_lag,count) %#ok<INUSL>
+
 
 % stop on error flag
 global stop_on_error; %#ok<NUSED>
@@ -901,6 +929,7 @@ function [hass_result,pass,friction_normalized, errStr] = frictioncheck(hgs,...
     fullDataFileName,...
     friction_normalized,count)
 
+
 % stop on error flag
 global stop_on_error;
 
@@ -976,6 +1005,7 @@ end
 %%
 function appendToLogFile(fileName, logMsg)
 [fid, message] = fopen(fileName, 'a');
+
 if fid == -1
     errordlg(sprintf(['Cannot create/open log file %s  \n %s \n Exiting Hass ' ...
         'Test.'], fileName, message),'HASS Test');

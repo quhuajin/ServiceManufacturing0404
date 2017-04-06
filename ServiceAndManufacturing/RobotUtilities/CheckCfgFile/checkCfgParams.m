@@ -33,9 +33,9 @@ function checkCfgParams(hgs)
 %    hgs_robot/subref
 
 %
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4159 $
+% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp (2007)
 %
 
@@ -144,8 +144,10 @@ function [checkResult,resultString,reasonString] = checkCfgParamsInternal(hgs)
             load(fullfile('configurationFile','defaultCfgFile-2_3.mat'));
         case 30
             load(fullfile('configurationFile','defaultCfgFile-3_0.mat'));
+        case 31
+            load(fullfile('configurationFile','defaultCfgFile-3_1.mat'));
         otherwise
-            load(fullfile('configurationFile','defaultCfgFile-3_0.mat'));
+            load(fullfile('configurationFile','defaultCfgFile-3_1.mat'));
     end
     
     armCfgParams = hgs{:};

@@ -283,7 +283,16 @@ updateMainButtonInfo(guiHandles,@start_find_gravity_constants);
                             'BackgroundColor',[0.75 0.75 0.75],...
                             'String',sprintf('%3.4f',computedGravConstants(i)));
                     end
-                    
+                case 31 % 3.1
+                    %check results
+                    [checkResult,resultColorList] = check_gravity_constants_v31(A1,X1,B1,A2,X2,B2,gData.GRAV_TORQUE_LIMITS,gData.DEVIATION_WARNING_RATIO);
+                    % display the generated constants
+                    for i=1:length(NOMINAL_GRAV_CONSTANTS)
+                        uicontrol(commonProperties,...
+                            'Position',[0.1+0.1*(i-1),0.6,0.1,0.1],...
+                            'BackgroundColor',[0.75 0.75 0.75],...
+                            'String',sprintf('%3.4f',computedGravConstants(i)));
+                    end    
                     % display the results
                     for i=1:hgs.WAM_DOF
                         uicontrol(commonProperties,...

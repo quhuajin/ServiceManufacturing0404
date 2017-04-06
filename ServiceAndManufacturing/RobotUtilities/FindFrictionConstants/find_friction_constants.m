@@ -9,9 +9,9 @@ function guiHandles = find_friction_constants(hgs,varargin)
 %
 %
 %
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4159 $
+% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp 2007
 
 
@@ -51,6 +51,14 @@ FRICTION_LOWER_WARN_LIMITS.V3_0 = [0.00, 0.00, 0.00, 0.00, 0.25, 0.50];
 NOMINAL_STDDEVS.V3_0            = [0.56, 1.65, 1.55, 0.76, 0.11, 0.25];
 STDDEV_UPPER_WARN_LIMITS.V3_0   = [0.86, 1.98, 1.75, 0.81, 0.13, 0.28];%3-sigma value
 
+% RIO 3.1 Friction Limits
+NOMINAL_KINETIC_FRICTIONS.V3_1  = [2.40, 2.84, 1.71, 1.81, 0.32  0.69];
+FRICTION_UPPER_FAIL_LIMITS.V3_1 = [3.53, 3.84, 2.29, 2.50, 0.51, 0.94];
+FRICTION_LOWER_FAIL_LIMITS.V3_1 = [0.00, 0.00, 0.00, 0.00, 0.00, 0.38];
+FRICTION_LOWER_WARN_LIMITS.V3_1 = [0.00, 0.00, 0.00, 0.00, 0.25, 0.50];
+NOMINAL_STDDEVS.V3_1            = [0.56, 1.65, 1.55, 0.76, 0.11, 0.25];
+STDDEV_UPPER_WARN_LIMITS.V3_1   = [0.86, 1.98, 1.75, 0.81, 0.13, 0.28];%3-sigma value
+
 %PID parameters
 KDS.V2_0= [10.00, 40.00, 35.00, 30.00, 0.75, 1.5];
 KPS.V2_0= [3800.0, 20000.0, 8000.00, 2000.00, 400.00, 300.0];
@@ -62,6 +70,8 @@ KDS.V2_3= [10.00, 40.00, 35.00, 30.00, 0.75, 3.0];
 KPS.V2_3= [3800.0, 20000.0, 8000.00, 2000.00, 400.00, 800.0];
 KDS.V3_0= [10.00, 40.00, 35.00, 30.00, 0.75, 3.0];
 KPS.V3_0= [3800.0, 20000.0, 8000.00, 2000.00, 400.00, 800.0];
+KDS.V3_1= [10.00, 40.00, 35.00, 30.00, 0.75, 3.0];
+KPS.V3_1= [3800.0, 20000.0, 8000.00, 2000.00, 400.00, 800.0];
 KI=zeros(1,6);
 
 RANGE_OF_MOTION=[pi/4,pi/8,pi/6,pi/6,pi/4,pi/4];
@@ -155,7 +165,15 @@ try
 
             KD=KDS.V3_0;
             KP=KPS.V3_0;
-            
+      case 31 % 3.1
+            NOMINAL_KINETIC_FRICTION  = NOMINAL_KINETIC_FRICTIONS.V3_1;
+            FRICTION_UPPER_FAIL_LIMIT = FRICTION_UPPER_FAIL_LIMITS.V3_1;
+            FRICTION_LOWER_FAIL_LIMIT = FRICTION_LOWER_FAIL_LIMITS.V3_1;
+            FRICTION_LOWER_WARN_LIMIT = FRICTION_LOWER_WARN_LIMITS.V3_1;
+            NOMINAL_STDDEV            = NOMINAL_STDDEVS.V3_1;
+            STDDEV_UPPER_WARN_LIMIT   = STDDEV_UPPER_WARN_LIMITS.V3_1;
+            KD=KDS.V3_1;
+            KP=KPS.V3_1;
         otherwise
             presentMakoResults(guiHandles,'FAILURE',...
                 sprintf(...

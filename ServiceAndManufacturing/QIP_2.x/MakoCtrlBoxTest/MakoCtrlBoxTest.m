@@ -97,9 +97,9 @@ function MakoCtrlBoxTest(hgs,testMode)
 %
 
 %
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4161 $
+% $Date: 2017-03-31 15:38:21 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp (2008)
 %
 
@@ -180,6 +180,10 @@ switch CPCIversion
         % load Svc-RIO3_0-xxxx.img
         svc_img = 'Svc-RIO3_0.img';
         defaultCfgFile = 'hgs_arm3_0.cfg.default';
+    case 'RIO 3.1' % 3.1
+        % load Svc-RIO3_1-xxxx.img
+        svc_img = 'Svc-RIO3_1.img';
+        defaultCfgFile = 'hgs_arm3_1.cfg.default';
         
     case '' % Canceled
         h = msgbox('User canceled hardware version selection. Script canceled.');

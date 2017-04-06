@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.standalone" target-name="Console Application" name="LoadNGo" location="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo" file="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo\LoadNGo.prj" build-checksum="130259435">
-    <param.project.name>C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo\LoadNGo.prj</param.project.name>
+  <configuration target="target.standalone" target-name="Console Application" name="FieldCutterTest" location="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest" file="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\FieldCutterTest.prj">
+    <param.project.name>C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\FieldCutterTest.prj</param.project.name>
     <param.target.type>Console Application</param.target.type>
-    <param.appname>LoadNGo</param.appname>
+    <param.appname>FieldCutterTest</param.appname>
     <param.intermediate>${PROJECT_ROOT}\..\Temp</param.intermediate>
-    <param.output>${PROJECT_ROOT}\..\RobotUtilitiesBin</param.output>
+    <param.output>${PROJECT_ROOT}\..\QIPScriptsBin</param.output>
     <param.embed.ctf>false</param.embed.ctf>
     <param.tbx_on_path>
       <item>none</item>
@@ -54,38 +54,29 @@
       <param.user.defined.mcr.options />
     </unset>
     <fileset.main>
-      <file>${PROJECT_ROOT}\LoadNGo.m</file>
+      <file>${PROJECT_ROOT}\FieldCutterTest.m</file>
     </fileset.main>
     <fileset.resources>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_0.cfg.default</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_2.cfg.default</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\hgs_arm3_0.cfg.default</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\hgs_arm3_1.cfg.default</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_0.img</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_2.img</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO3_0.img</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO3_1.img</file>
-      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\makoGUIdata.mat</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\@jSocket</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\@jSocket\java</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\makoGUIdata.mat</file>
+      <file>${PROJECT_ROOT}\images\warning.png</file>
+      <file>${PROJECT_ROOT}\mfiles\BurrStatusCheck.m</file>
+      <file>${PROJECT_ROOT}\mfiles\MicroAireStatusCheck.m</file>
+      <file>${PROJECT_ROOT}\mfiles\MICSStatusCheck.m</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file name="LoadNGo.exe" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo\..\RobotUtilitiesBin\LoadNGo.exe</file>
-      <file name="readme.txt" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="true">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo\..\RobotUtilitiesBin\readme.txt</file>
-      <file name="LoadNGo.ctf" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo\..\RobotUtilitiesBin\LoadNGo.ctf</file>
+      <file name="FieldCutterTest.exe" location="${PROJECT_ROOT}\..\QIPScriptsBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\..\QIPScriptsBin\FieldCutterTest.exe</file>
+      <file name="readme.txt" location="${PROJECT_ROOT}\..\QIPScriptsBin" optional="true">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\..\QIPScriptsBin\readme.txt</file>
+      <file name="FieldCutterTest.ctf" location="${PROJECT_ROOT}\..\QIPScriptsBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\..\QIPScriptsBin\FieldCutterTest.ctf</file>
     </build-deliverables>
     <workflow />
     <matlab>
       <root>C:\Program Files\MATLAB\R2012b</root>
       <path>
         <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\ATI</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\ATI\ATIlib</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\mscribe</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\New folder</directory>
         <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\mex</directory>
-        <directory>C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\demos</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\graph2d</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\graph3d</directory>

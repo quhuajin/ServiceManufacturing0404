@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.deploytool" plugin-version="1.0">
-  <configuration target="target.standalone" target-name="Console Application" name="SetArmSerialNumber" location="${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber" file="${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\SetArmSerialNumber.prj">
-    <param.project.name>${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\SetArmSerialNumber.prj</param.project.name>
+  <configuration target="target.standalone" target-name="Console Application" name="SetArmSerialNumber" location="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber" file="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\SetArmSerialNumber.prj">
+    <param.project.name>C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\SetArmSerialNumber.prj</param.project.name>
     <param.target.type>Console Application</param.target.type>
     <param.appname>SetArmSerialNumber</param.appname>
     <param.intermediate>${PROJECT_ROOT}\..\Temp</param.intermediate>
@@ -57,29 +57,28 @@
       <file>${PROJECT_ROOT}\setArmSerialNumber.m</file>
     </fileset.main>
     <fileset.resources>
+      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\hgs_arm3_1.cfg.default</file>
+      <file>C:\Users\test\Desktop\hqu\SM_14\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO3_1.img</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_0.cfg.default</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_2.cfg.default</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm3_0.cfg.default</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_0.img</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_2.img</file>
+      <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO3_0.img</file>
       <file>${PROJECT_ROOT}\..\..\..\MakoLab\makoGUIdata.mat</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_0.cfg.default</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm2_2.cfg.default</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\hgs_arm3_0.cfg.default</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_0.img</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO2_2.img</file>
-	  <file>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS\Svc-RIO3_0.img</file>
     </fileset.resources>
     <fileset.package />
     <build-deliverables>
-      <file name="SetArmSerialNumber.ctf" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\SetArmSerialNumber.ctf</file>
-      <file name="SetArmSerialNumber.exe" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\SetArmSerialNumber.exe</file>
-      <file name="readme.txt" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="true">${PROJECT_ROOT}\..\..\..\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\readme.txt</file>
+      <file name="SetArmSerialNumber.exe" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\SetArmSerialNumber.exe</file>
+      <file name="SetArmSerialNumber.ctf" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="false">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\SetArmSerialNumber.ctf</file>
+      <file name="readme.txt" location="${PROJECT_ROOT}\..\RobotUtilitiesBin" optional="true">C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber\..\RobotUtilitiesBin\readme.txt</file>
     </build-deliverables>
+    <workflow />
     <matlab>
       <root>C:\Program Files\MATLAB\R2012b</root>
       <path>
-        <directory>${PROJECT_ROOT}\..\..\..\MakoLab</directory>
-        <directory>${PROJECT_ROOT}\..\..\..\MakoLab\mex</directory>
-        <directory>${PROJECT_ROOT}\..\..\..\MakoLab\ATI</directory>
-        <directory>${PROJECT_ROOT}\..\..\..\MakoLab\ATI\ATIlib</directory>
-        <directory>${PROJECT_ROOT}\..\..\..\MakoLab\extern</directory>
-		<directory>${PROJECT_ROOT}\..\..\..\MakoLab\extern\ServiceMfgCRISIS</directory>
+        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab</directory>
+        <directory>C:\Users\test\Desktop\hqu\SM_14\MakoLab\mex</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\demos</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\graph2d</directory>
         <directory>${MATLAB_ROOT}\toolbox\matlab\graph3d</directory>

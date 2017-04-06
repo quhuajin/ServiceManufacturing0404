@@ -19,9 +19,9 @@ function guiHandles = TransmissionCheck(hgs)
 %   hgs_robot
 %
 %
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4159 $
+% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp (2008)
 %
 
@@ -93,11 +93,17 @@ PHASE_WARNINGS.V3_0= [16.2   09.2  4.5   14.0  1.2   20.6]*pi/180;
 PHASE_NOMINALS.V3_0= [13.4   08.2  3.4   12.3  0.9   16.3]*pi/180;
 AMP_LIMITS.V3_0=   [0.89   0.79  0.95  0.69  0.97  1.01];
 
-% default limit is V3.0
-PHASE_LIMIT= PHASE_LIMITS.V3_0;
-PHASE_WARNING= PHASE_WARNINGS.V3_0;
-PHASE_NOMINAL= PHASE_NOMINALS.V3_0;
-AMP_LIMIT=   AMP_LIMITS.V3_0;
+% V3.1 System Limits
+PHASE_LIMITS.V3_1=   [18.9   10.3  5.6   15.7  1.5   22.7]*pi/180;
+PHASE_WARNINGS.V3_1= [16.2   09.2  4.5   14.0  1.2   20.6]*pi/180;
+PHASE_NOMINALS.V3_1= [13.4   08.2  3.4   12.3  0.9   16.3]*pi/180;
+AMP_LIMITS.V3_1=   [0.89   0.79  0.95  0.69  0.97  1.01];
+
+% default limit is V3.1
+PHASE_LIMIT= PHASE_LIMITS.V3_1;
+PHASE_WARNING= PHASE_WARNINGS.V3_1;
+PHASE_NOMINAL= PHASE_NOMINALS.V3_1;
+AMP_LIMIT=   AMP_LIMITS.V3_1;
 
 %% TEST PARAMETERS
 
@@ -120,6 +126,11 @@ vib_amp.V2_3=   [.002 .002 .002 .005 .005 .05]; % vib_amp
 % V3.0 Test Parameters
 vib_freqH.V3_0= [10    12   10   13   30   55]; % vib_freqH
 vib_amp.V3_0=   [.002 .002 .002 .005 .005 .05]; % vib_amp
+
+% V3.1 Test Parameters
+vib_freqH.V3_1= [10    12   10   13   30   55]; % vib_freqH
+vib_amp.V3_1=   [.002 .002 .002 .005 .005 .05]; % vib_amp
+
 
 % default test parameters is V2.1
 ON.vib_freqH= vib_freqH.V2_1; % vib_freqH
@@ -252,6 +263,13 @@ end
                 AMP_LIMIT=   AMP_LIMITS.V3_0;
                 ON.vib_freqH= vib_freqH.V3_0; % vib_freqH
                 ON.vib_amp= vib_amp.V3_0; % vib_amp
+            case 31 % 3.1
+                PHASE_LIMIT= PHASE_LIMITS.V3_1;
+                PHASE_WARNING= PHASE_WARNINGS.V3_1;
+                PHASE_NOMINAL= PHASE_NOMINALS.V3_1;
+                AMP_LIMIT=   AMP_LIMITS.V3_1;
+                ON.vib_freqH= vib_freqH.V3_1; % vib_freqH
+                ON.vib_amp= vib_amp.V3_1; % vib_amp
             otherwise
                 presentMakoResults(guiHandles,'FAILURE',...
                     sprintf('Unsupported Robot version: V%2.1f',version));

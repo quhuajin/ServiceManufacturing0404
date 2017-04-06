@@ -35,7 +35,7 @@ defaultRobotConnection = false;
 % initialize real data collection
 realData = 1;
 
-if nargin<1
+if nargin<2
     hgs = hgs_robot('10.1.1.178'); % connection through voyager port
     if isempty(hgs)
         guiHandles='';
@@ -88,7 +88,7 @@ if(realData)
     % get arm hardware version
     armHardwareVersion=hgs.ARM_HARDWARE_VERSION;
 else
-    armHardwareVersion = 3.0;
+    armHardwareVersion = 3.1;
 end
 
 % Setup Test paramters.  These are a structure in the format
@@ -121,6 +121,13 @@ switch int32(armHardwareVersion * 10 + 0.05)
         testParams = {...
             'MICS Check',@MICSCheck;...
             };
+        
+    case 31 % 3.1
+        runTest = [1];
+        testParams = {...
+            'MICS Handpiece Check',@MICSCheck;...
+        
+        };
     otherwise
         presentMakoResults(guiHandles,'FAILURE',...
             sprintf('Invalid hardware version %.1f',armHardwareVersion));

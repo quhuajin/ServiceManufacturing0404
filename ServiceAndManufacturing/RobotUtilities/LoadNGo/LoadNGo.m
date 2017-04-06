@@ -34,7 +34,9 @@ try
         case 30 % 3.0
             % load Svc-RIO3_0-xxxx.img
             svc_img = 'Svc-RIO3_0.img';     
-            
+        case 31 % 3.1
+            % load Svc-RIO3_1-xxxx.img
+            svc_img = 'Svc-RIO3_1.img';    
         otherwise 
             tex = sprintf(...
                 'Invalid hardware version %.1f, cannot load CRISIS',version);

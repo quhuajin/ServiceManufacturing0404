@@ -49,6 +49,9 @@ MAX_ALLOWED_DEVIATION.V2_3 =  [  0.9    1.3    1.4     0.4    4.2  15.7   0.1   
 NOMINAL_GRAV_CONSTANTS.V3_0 = [ -10.96 -17.57  13.41  -1.57  38.15 0.89  -0.37 -0.1 ];
 MAX_ALLOWED_DEVIATION.V3_0 =  [  0.9    1.3    1.4     0.4    4.2  15.7   0.1   0.2  ];
 
+NOMINAL_GRAV_CONSTANTS.V3_1 = [ -10.96 -17.57  13.41  -1.57  38.15 0.89  -0.37 -0.1 ];
+MAX_ALLOWED_DEVIATION.V3_1 =  [  0.9    1.3    1.4     0.4    4.2  15.7   0.1   0.2  ];
+
 GRAVITY_TORQUE_LIMITS=jntGravityLimits.jntGravityTorqueLimits;
 
 gravity_data.NOMINAL_GRAV_CONSTANTS = [];
@@ -117,6 +120,11 @@ switch int32(gravity_data.arm_hardware_version * 10 + 0.05)
         gravity_data.MAX_ALLOWED_DEVIATION=MAX_ALLOWED_DEVIATION.V3_0;
         gravity_data.GRAV_TORQUE_LIMITS=GRAVITY_TORQUE_LIMITS;
         gravity_data.DEVIATION_WARNING_RATIO = ones(1,hgs.WAM_DOF)*0.95;
+    case 31 % 3.1
+        gravity_data.NOMINAL_GRAV_CONSTANTS=NOMINAL_GRAV_CONSTANTS.V3_1;
+        gravity_data.MAX_ALLOWED_DEVIATION=MAX_ALLOWED_DEVIATION.V3_1;
+        gravity_data.GRAV_TORQUE_LIMITS=GRAVITY_TORQUE_LIMITS;		     
+        gravity_data.DEVIATION_WARNING_RATIO = ones(1,hgs.WAM_DOF)*0.95;		        
     otherwise
         % Generate the gui
         guiHandles = generateMakoGui(gravity_data.mbDisplayText,[],hgs);

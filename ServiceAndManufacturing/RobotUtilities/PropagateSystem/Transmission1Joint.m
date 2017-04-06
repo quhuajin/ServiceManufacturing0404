@@ -65,6 +65,10 @@ end
           
           ON.vib_freqH=[10    12   10   13   30   55]; % vib_freqH
           ON.vib_amp=  [.002 .002 .002 .005 .005 .05]; % vib_amp
+      case 31 % 3.1
+          
+          ON.vib_freqH=[10    12   10   13   30   55]; % vib_freqH
+          ON.vib_amp=  [.002 .002 .002 .005 .005 .05]; % vib_amp
       otherwise
           error('Unsupported Robot version: V%2.1f',version);
   end

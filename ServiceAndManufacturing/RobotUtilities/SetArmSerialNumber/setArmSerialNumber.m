@@ -17,15 +17,40 @@ function setArmSerialNumber(hgs)
 %
 
 %
-% $Author: dmoses $
-% $Revision: 4149 $
-% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
+% $Author: hqu $
+% $Revision: 4159 $
+% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
 % Copyright: MAKO Surgical corp (2008)
-%
 
-%Supported Hardware version list
-SupportedHardwareVersion={'3.0','2.2','2.0'};
-SupportedHardwareVersion_dbl = [30 22 20];
+
+if nargin<1
+    hgs = connectRobotGui;
+    if isempty(hgs)
+        guiHandles='';
+        return;
+    end
+   
+end
+
+%Get the Rio hardware version number
+rioHardwareVersion = hgs.ARM_HARDWARE_VERSION; 
+switch (int32(rioHardwareVersion * 10 + 0.05))
+  case {20, 21, 22, 23} % 2.0--3.0
+    SupportedHardwareVersion={'3.0','2.2','2.0'};
+    SupportedHardwareVersion_dbl = [30 22 20];
+  case{30} %3.0 
+    SupportedHardwareVersion={'3.1','3.0','2.2','2.0'};
+    SupportedHardwareVersion_dbl = [31 30 22 20];   
+  case{31} %3.1 
+    SupportedHardwareVersion={'3.1','3.0'};
+    SupportedHardwareVersion_dbl = [31 30];    
+end
+
+ignoreParam.RIO3_1to3_1= {'ARM_HARDWARE_VERSION' 'ARM_SERIAL_NUMBER' };
+
+ignoreParam.RIO3_0to3_1= {'ARM_HARDWARE_VERSION',...
+    'ARM_SERIAL_NUMBER' 'PERIPHERAL_SYSTEM'};
+ignoreParam.RIO3_1to3_0 = ignoreParam.RIO3_0to3_1;
 
 ignoreParam.RIO2_2to3_0 = {...
     'ARM_HARDWARE_VERSION',...
@@ -339,7 +364,7 @@ popParams = true;
         % Service/Manufacturing needs to update certain values from this
         % 2.13 crisis (2.3 hardware) to 3.0 even though 2.3 is not a
         % commercialized hardware version.
-        SupportedHardwareVersion_dbl = [30 23 22 20]; 
+       SupportedHardwareVersion_dbl = [31 30 23 22 20]; 
         
         % get various formats of current hardware version (cHW)
         % and desired hardware version (dHW)

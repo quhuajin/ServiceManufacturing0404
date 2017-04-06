@@ -1,3 +1,4 @@
+
 function ServiceAndManufacturingMain
 
 % ServiceAndManufacturingMain Top level gui to execute all the service and mfg scripts
@@ -27,24 +28,43 @@ installDir = serviceMainInstallPath(1:serviceMainDirLocation-1);
 QIPScriptsDir = fullfile(installDir,'QIPScriptsBin');
 RobotUtilitiesDir = fullfile(installDir,'RobotUtilitiesBin');
 
+try 
+%Check if it is RIO 3.1 system. If yes, the anspach is removed so there is
+%no Burr Status Check in the presurgery check 
+hgs=hgs_robot('172.16.16.100');
+IsRIO3_1System=0;
+rioHardwareVersion = hgs.ARM_HARDWARE_VERSION;
+switch (int32(rioHardwareVersion * 10 + 0.05))
+    case 31  % 3.1
+IsRIO3_1System=1; % the system is V3.1 
+end 
+
+catch
+    IsRIO3_1System=0;%Default not a RIO 3.1 system 
+end
 % Define the Menu Lists
 % lists are in the format 
 % label,BinaryFileName, <NonDefaultDirectory if needed>
 fieldServiceMenu = {...
     {'Transmission Check','TransmissionCheck'}
-    {'Optical Compliance Check','OpticalComplianceTest'}
+    {'System Propagation','PropagateSystem'}
+    {'Find Friction Constants','FindFrictionConstants'}
     {'Phase Check','PhaseCheck'}
+    {'Optical Compliance Check','OpticalComplianceTest'}
+    {'Motor Phasing','MotorPhasing'}
     {'Auto Kinematic Calibration','AutoKinematicCalibration'}
     {'BallBar Data Collection','BallBarDataCollection'}
     {'Kinematic Calibration','KinematicCalibration'}
     {'Find Gravity Constants','SelectGravityConstants'}
-    {'System Propagation','PropagateSystem'}
-    {'Find Friction Constants','FindFrictionConstants'}
-    {'Motor Phasing','MotorPhasing'}
-    {'Hall Phase Tool','HallPhaseTool'}
+    {'Find Homing Constants','FindHomingConstants'}
+    {'Find Transmission Ratio','FindTransmissionRatio'}
+    {'Motor Bandwidth Test','FieldMotorBandwidthTest'}
+    {'Cutter Test','FieldCutterTest'}
     {'Upload EE File','Upload_EE_File'}
-    {'HASS Test','FieldHASSTest'}
+    {'Hall Phase Tool','HallPhaseTool'}
     {'Brakes Tool','BrakesTool'}
+    {'HASS Test','FieldHASSTest'}
+    
     };
 
 configurationFileSetMenu = {
@@ -64,8 +84,26 @@ configurationFileSetMenu = {
     {'BallBar Data Collection','BallBarDataCollection'}
     {'Manual Arm Accuracy Check','ManualArmAccuracyCheck'}
     {'Auto Arm Accuracy Check','AutoArmAccuracyCheck'}
-    };
+        };
 
+
+% For RIO 3.1, there is not Burr Status Check menu 
+if (IsRIO3_1System==1)
+    
+presurgeryMenu = {...
+    {'Pre-Surgery Check','PresurgeryCheck'}
+    {'Arm Status Check','ArmStatusCheck'}
+    {'Home Robotic Arm','HomeRobot'}
+    {'Combined Accuracy Check','CombinedAccuracyCheck'}
+    {'Auto Arm Accuracy Check','AutoArmAccuracyCheck'}
+    {'Brake Check','BrakeCheck'}
+    {'Check Angle Discrepancy','CheckAngleDiscrepancy'}
+    {'MICS Status Check','MICSStatusCheck'}
+    {'Manual Arm Accuracy Check','ManualArmAccuracyCheck'}
+    {'Camera Accuracy Check','CameraAccuracyCheck'}
+    };
+else 
+    
 presurgeryMenu = {...
     {'Pre-Surgery Check','PresurgeryCheck'}
     {'Arm Status Check','ArmStatusCheck'}
@@ -79,14 +117,16 @@ presurgeryMenu = {...
     {'Manual Arm Accuracy Check','ManualArmAccuracyCheck'}
     {'Camera Accuracy Check','CameraAccuracyCheck'}
     };
+end
 
-QIPMenu = {
+    QIPMenu = {
     {'Motor Test','MotorTestQIP'}
     {'Joint Test','JointTestQIP'}
     {'Joint Build','JointBuild'}
     {'Anspach Box Test','AnspachBoxTest'}
     {'CPCI Controller Box Test','MakoCtrlBoxTest'}
     {'Cutter Test','CutterTest'}
+    {'Foot Switch Test','FootSwitchTest'}
     {'MICS Test','MICSTest'}
     {'Motor Bandwidth Test','MotorBandwidthTest'}
     {'Robot Accuracy Test','RobotAccuracyCheck'}
@@ -101,6 +141,8 @@ QIPMenu = {
     {'Phase Check','PhaseCheck',RobotUtilitiesDir}
     {'Check Configuration File','CheckConfigurationParams',RobotUtilitiesDir}
     };
+
+
 
 % Check if the Robot Hosts Environment Variable is set if not use default
 if isempty(getenv('ROBOT_HOST'))
@@ -461,17 +503,6 @@ end
 
 % set gravity
 comm(hgs,'set_gravity_constants','KNEE');
-
-% Ramp up irrigation pump if needed
-peripheralData=commDataPair(hgs,'get_peripheral_state');
-if peripheralData.cutter_drip~=8
-    comm(hgs,'peripheral_comm','CUTTER_DRIP_SWITCH');
-    for i=1:10
-        comm(hgs,'peripheral_comm','CUTTER_DRIP_UP');
-        pause(.05);
-        waitbar(.5+.05*i,burrResetWait);
-    end
-end
 
 delete(burrResetWait);
 
