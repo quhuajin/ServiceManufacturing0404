@@ -1,0 +1,43 @@
+'get_cabletension
+#A
+'INPUTS
+'OFFSET = 9.0
+'DIR = -1
+'GET THE CURRENT GAINS
+KP = _KPA
+KD = _KDA
+KI = _KIA
+'SET GAINS TO ZERO FOR TORQUE MODE
+'KD IS set to limit the speed
+KP 0
+KD 10
+KI 0
+DONE = 0
+'PRELOAD TORQUE
+TRQPLD = 0.5
+SH A
+
+#B
+WT 500
+OF DIR*TRQPLD
+WT 500
+J_pos1 = _TPB
+M_pos1 = _TPA
+
+OF DIR*OFFSET
+WT 2000
+
+J_pos2 = _TPB
+M_pos2 = _TPA
+
+OF 0.0
+'MG "DONE"
+MO
+
+' RESET GAINS
+KP KP
+KD KD
+KI KI
+WT 100
+DONE = 1
+EN

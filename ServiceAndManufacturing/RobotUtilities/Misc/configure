@@ -1,0 +1,14 @@
+"Presurgery Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/PresurgeryCheck
+
+"Arm Status Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/ArmStatusCheck
+"Home Robotic Arm" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/HomeRobot
+"Combined Accuracy Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/CombinedAccuracyCheck
+"Auto Arm Accuracy Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/AutoBallBarAccuracyCheck
+"Brake Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/BrakeCheck
+"Angle Discrepancy" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/CheckAngleDiscrepancy
+
+"Burr Status Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/BurrStatusCheck
+"MICS Status Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/MICSStatusCheck
+"Manual Arm Accuracy Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/BallBarAccuracyCheck 
+"Camera Accuracy Check" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/CameraAccuracyCheck  
+

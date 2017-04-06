@@ -1,0 +1,4 @@
+"View Arm Software Logs" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/ViewRobotLogs
+"Arm Logger" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/ArmLogger
+
+"Restart Arm Software" $::env(ROBOT_UTILITIES)/setupMatlabEnv.sh $::env(ROBOT_UTILITIES)/RobotUtilitiesBin/RestartArmSoftware

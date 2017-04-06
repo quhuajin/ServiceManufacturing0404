@@ -1,0 +1,55 @@
+'======== subroutine ==========
+' Motor Phasing
+' ** output var:
+'   pzero: encoder count at phase angle 0
+#MPHASE
+DONE=0
+JG 1000
+BGA
+' move to hall state 5
+IF (_QHA=5)
+JG 0
+STA
+ENDIF
+BGA
+#MP
+pzero= _TPA; ' encoder count at phase angle 0 
+JP #MP, _QHA<>1
+JG 0
+STA
+'MG "Phase 0 is", pzero," count"
+DONE=1
+EN
+
+'======== subroutine ==========
+' Normal phase check
+' ** input var
+'   nhchg: number of hall changes
+' ** output var:
+'   hall[nhchg]: hall state array
+'   ecnt[nhchg]: encoder count array
+#NPCHK
+DONE=0
+' change sampling freq
+TM 500
+DA*[]
+DM hall[nhchg], ecnt[nhchg]
+JG 5000
+hcnt=0; ' no of hall changes counter
+hold= _QHA; ' old hall state
+BGA
+#LPNC
+hnow= _QHA;  ' current hall state
+IF (hold<>hnow)
+hall[hcnt]= hnow
+ecnt[hcnt]= _TPA
+hcnt=hcnt+1
+hold= hnow
+ENDIF
+JP #LPNC, hcnt< nhchg
+JG 0
+STA
+WT 200
+DONE=1
+MO
+EN

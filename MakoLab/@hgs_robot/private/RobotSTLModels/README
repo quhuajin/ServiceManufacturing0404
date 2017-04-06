@@ -1,0 +1,6 @@
+The STL models in this folder are for refernce only.  The
+data in these models are preprocessed using the read_stl function
+and saved as a MAT file for efficient loading
+
+Attached is a simple script to help generate the model files
+in the correct format from the STL files.

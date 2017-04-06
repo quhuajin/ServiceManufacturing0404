@@ -1,0 +1,20 @@
+#A
+DONE = 0
+'DIR = 1
+SHA
+JG DIR*100000
+BGA
+
+'#B
+'LIMIT = 90000
+'V = DIR*_TVA
+'IF V < LIMIT
+'JP #B
+'ENDIF
+'MG V
+'WT 100
+'TORQUE = _TTA
+'MG TORQUE
+'JG 0
+'DONE = 1
+'EN

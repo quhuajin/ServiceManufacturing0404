@@ -1,0 +1,25 @@
+#HALL
+DA *[]'deallocate arrays
+'SPEED=-3000
+'SIZE=36
+SHA
+'Allocate memory
+DM HALL[SIZE], ANGLE[SIZE]
+'Initialization
+NUM=0;
+HALL[0]=_QHA
+ANGLE[0]=_TPA;
+'start jogging
+JG SPEED;
+BGA
+#A
+'update hall only if it is changed
+IF (_QHA<>HALL[NUM])
+NUM=NUM+1
+HALL[NUM]=_QHA
+ANGLE[NUM]=_TPA
+ENDIF
+JP #A,NUM<(SIZE-1)
+'QU HALL[];MG ""
+AB;
+EN

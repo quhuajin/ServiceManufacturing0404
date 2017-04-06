@@ -1,0 +1,5 @@
+# Copyright 2014 The MathWorks, Inc.
+
+0DEFNU
+0NASGU
+0STOUT

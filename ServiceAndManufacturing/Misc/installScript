@@ -1,0 +1,79 @@
+#!/bin/sh
+ 
+# Copy all the files from the CD or installation media
+echo " "
+echo -n "Removing previous install......"
+rm -rf $ROBOT_UTILITIES/RobotUtilitiesBin
+rm -f $ROBOT_UTILITIES/configure
+rm -f $ROBOT_UTILITIES/configure.service
+rm -f $ROBOT_UTILITIES/setupMatlabEnv.sh
+rm -f $ROBOT_UTILITIES/version
+echo "Done"
+
+echo -n "Copying Binaries..............."
+mkdir -p $ROBOT_UTILITIES/RobotUtilitiesBin
+cp LinuxBinaries/RobotUtilitiesBin/*.ctf $ROBOT_UTILITIES/RobotUtilitiesBin/.
+cp -ru LinuxBinaries/RobotUtilitiesBin $ROBOT_UTILITIES/.
+echo "Done"
+
+
+echo -n "Copying Configuration files...."
+cp VoyagerInstallFiles/configure $ROBOT_UTILITIES/.
+cp VoyagerInstallFiles/configure.service $ROBOT_UTILITIES/.
+cp VoyagerInstallFiles/setupMatlabEnv.sh $ROBOT_UTILITIES/.
+cp version $ROBOT_UTILITIES/.
+echo "Done"
+
+# Make sure all files have read/write permissions
+chmod -R +rw $ROBOT_UTILITIES
+
+
+# check the installation by brute force comparing each file
+echo -n "Checking Installation.........."
+
+# Check the directory
+diff -r LinuxBinaries/RobotUtilitiesBin $ROBOT_UTILITIES/RobotUtilitiesBin &> /tmp/robUtilInstall
+if [ ! $? -eq 0 ]
+then
+	echo "INSTALLATION FAILED --- RobotUtilitiesBin directory check failed" > $UPGRADE_ERROR_MSG;
+	echo " "
+	exit 1
+fi
+
+# check the individual files installed
+diff VoyagerInstallFiles/configure $ROBOT_UTILITIES/configure &> /tmp/robUtilInstall
+if [ ! $? -eq 0 ]
+then
+	echo "INSTALLATION FAILED --- configure file check failed" > $UPGRADE_ERROR_MSG;
+	echo " "
+	exit 1
+fi
+
+diff VoyagerInstallFiles/setupMatlabEnv.sh $ROBOT_UTILITIES/setupMatlabEnv.sh &> /tmp/robUtilInstall
+if [ ! $? -eq 0 ]
+then
+	echo "INSTALLATION FAILED --- setupMatlabEnv file check failed" > $UPGRADE_ERROR_MSG;
+	echo " "
+	exit 1
+fi
+
+diff version $ROBOT_UTILITIES/version &> /tmp/robUtilInstall
+if [ ! $? -eq 0 ]
+then
+	echo "INSTALLATION FAILED --- version file check failed" > $UPGRADE_ERROR_MSG;
+	echo " "
+	exit 1
+fi
+
+
+# If i got here the all the checks have passed
+# declare success and exit
+echo "INSTALLATION SUCCESSFUL"
+
+echo " "
+echo " "
+
+# Clean up and exit
+rm -f /tmp/robUtilInstall
+
+exit 0

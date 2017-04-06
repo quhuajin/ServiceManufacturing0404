@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings name="matlab" xmlns="urn:mathworks.matlab.settings" xsi:schemaLocation="urn:mathworks.matlab.settings settings.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <key name="DeleteFilesPermanently">
+        <bool>
+            <value>1</value>
+        </bool>
+    </key>
+    <key name="UserPath">
+        <string>
+            <value><![CDATA[]]></value>
+        </string>
+    </key>
+    <settings name="apps" visible="true">
+    </settings>
+    <settings name="desktop">
+        <settings name="commandwindow">
+        </settings>
+        <settings name="currentfolder">
+            <key name="History">
+                <string minArraySize="0" maxArraySize="500">
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\MakoLab\mex]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ExternalSoftware]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\MakoLab]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\MakoLab\mex]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\CRISIS Complexity Scripts\CRISIScomplexity_mcr]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\CRISIS Complexity Scripts\CRISIScomplexity_mcr\CRISIScomplexity_B8B16604D8CCB18AD794A94559BF395A]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\CRISIS Complexity Scripts\CRISIScomplexity_mcr\CRISIScomplexity]]></value>
+                    <value><![CDATA[C:\Users]]></value>
+                    <value><![CDATA[C:]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities]]></value>
+                    <value><![CDATA[D:\RobUtil-1_10_branch\ServiceAndManufacturing]]></value>
+                    <value><![CDATA[D:\RobUtil-1_10_branch\ServiceAndManufacturing\RobotUtilities]]></value>
+                    <value><![CDATA[D:\RobUtil-1_10_branch]]></value>
+                    <value><![CDATA[D:\RobUtil-1_10_branch\MakoLab\mex]]></value>
+                    <value><![CDATA[D:\RobUtil-1_10_branch\MakoLab]]></value>
+                    <value><![CDATA[D:]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x]]></value>
+                </string>
+            </key>
+            <settings name="autorefresh">
+            </settings>
+            <settings name="lastfolder">
+                <key name="ClosedGroups">
+                    <string minArraySize="0" maxArraySize="100000">
+                        <value><![CDATA[]]></value>
+                    </string>
+                </key>
+                <key name="ColumnOrder">
+                    <string minArraySize="0" maxArraySize="6">
+                        <value><![CDATA[icon]]></value>
+                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[size]]></value>
+                        <value><![CDATA[modified]]></value>
+                        <value><![CDATA[__vertical_attribute:description]]></value>
+                        <value><![CDATA[type]]></value>
+                    </string>
+                </key>
+                <key name="ColumnSizes">
+                    <string minArraySize="0" maxArraySize="100000">
+                        <value><![CDATA[40]]></value>
+                        <value><![CDATA[265]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[0]]></value>
+                    </string>
+                </key>
+                <key name="GroupColumn">
+                    <string>
+                        <value><![CDATA[]]></value>
+                    </string>
+                </key>
+                <key name="GroupMode">
+                    <string>
+                        <value><![CDATA[]]></value>
+                    </string>
+                </key>
+                <key name="OpenGroups">
+                    <string minArraySize="0" maxArraySize="100000">
+                    </string>
+                </key>
+                <key name="SortColumn">
+                    <string>
+                        <value><![CDATA[name]]></value>
+                    </string>
+                </key>
+                <key name="SortDescending">
+                    <bool>
+                        <value>0</value>
+                    </bool>
+                </key>
+                <key name="VisibleColumns">
+                    <string minArraySize="0" maxArraySize="100">
+                        <value><![CDATA[icon]]></value>
+                        <value><![CDATA[name]]></value>
+                    </string>
+                </key>
+            </settings>
+            <settings name="lastsearch">
+                <key name="ClosedGroups">
+                    <string minArraySize="0" maxArraySize="10000">
+                        <value><![CDATA[]]></value>
+                    </string>
+                </key>
+                <key name="ColumnOrder">
+                    <string minArraySize="0" maxArraySize="7">
+                        <value><![CDATA[icon]]></value>
+                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[size]]></value>
+                        <value><![CDATA[modified]]></value>
+                        <value><![CDATA[__vertical_attribute:description]]></value>
+                        <value><![CDATA[location]]></value>
+                        <value><![CDATA[type]]></value>
+                    </string>
+                </key>
+                <key name="ColumnSizes">
+                    <string minArraySize="0" maxArraySize="100000">
+                        <value><![CDATA[40]]></value>
+                        <value><![CDATA[127]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[170]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[0]]></value>
+                        <value><![CDATA[0]]></value>
+                    </string>
+                </key>
+                <key name="GroupColumn">
+                    <string>
+                        <value><![CDATA[location]]></value>
+                    </string>
+                </key>
+                <key name="GroupMode">
+                    <string>
+                        <value><![CDATA[location]]></value>
+                    </string>
+                </key>
+                <key name="OpenGroups">
+                    <string minArraySize="0" maxArraySize="100000">
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q6232.inf_amd64_neutral_4b5d6d39febf1311]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\bth.inf_amd64_neutral_de0494b6391d872c]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnhp003.inf_amd64_neutral_4480210763997eb4\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnhp002.inf_amd64_neutral_04d05d1f6a90ea24\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky005.inf_amd64_neutral_8836be987024e6a9\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q63x64.inf_amd64_neutral_572888e39b2d8e72]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\wiaca00i.inf_amd64_neutral_de104aaa48ee4b00]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky008.inf_amd64_neutral_9f6abc54cbf095f2\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\CompatTel]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\mdmwhql0.inf_amd64_neutral_23613e3dd9401f10]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky006.inf_amd64_neutral_522043c34551b0c0\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\WindowsPowerShell\v1.0\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32\Printing_Admin_Scripts\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\net1qx64.inf_amd64_neutral_85d10fa4c777b7be]]></value>
+                        <value><![CDATA[C:\Windows\system32\wbem]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q6032.inf_amd64_neutral_4ee79f64bf3aa5ad]]></value>
+                        <value><![CDATA[C:\Windows\system32\migwiz\dlmanifests\Microsoft-Windows-msmq-messagingcoreservice]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\mdmcpq2.inf_amd64_neutral_e9784021af1f5e24]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\mdmcpq.inf_amd64_neutral_fbc4a14a6a13d0c8]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\qd3x64.inf_amd64_neutral_e8903726d63a3f07]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q60x64.inf_amd64_neutral_bec39c890c614609]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky009.inf_amd64_neutral_8e54c9ff272b72f1\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnep00l.inf_amd64_neutral_f1fa021d2221e2c7\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\spp\tokens\ppdlic]]></value>
+                        <value><![CDATA[C:\Windows\system32\oobe]]></value>
+                        <value><![CDATA[C:\Windows\system32\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\ql40xx2.inf_amd64_neutral_b95932400326817e]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\bth.inf_amd64_neutral_ca26c6da62d71ca8]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q62x64.inf_amd64_neutral_ac22bb6c1fe9447e]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q5132.inf_amd64_neutral_604c63f4d339044d]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32\LogFiles]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\mchgr.inf_amd64_neutral_407146dba80d1566]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q51x64.inf_amd64_neutral_d12b2d5ff1df986c]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky004.inf_amd64_neutral_5db759db19acd3ae\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\drivers]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnca00z.inf_amd64_neutral_27f402ce616c3ebc\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\ql40xx.inf_amd64_neutral_77a826e5c0a07842]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\bth.inf_amd64_neutral_e54666f6a3e5af91]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\mdmcpq.inf_amd64_neutral_b53453733bd795bc]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\ql2300.inf_amd64_neutral_ca8487daf77ff7cb]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnbr003.inf_amd64_neutral_dff45d1d0df04caf\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\migration\WSMT\rras\replacementmanifests]]></value>
+                        <value><![CDATA[C:\Windows\system32\wbem\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\tape.inf_amd64_neutral_c6a6811d3d827dba]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky003.inf_amd64_neutral_fe7ea176f20ab839\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q6332.inf_amd64_neutral_d065ebe3b94a72c2]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnca00x.inf_amd64_neutral_eb0842aa932d01ee\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\drivers\en-US]]></value>
+                        <value><![CDATA[C:\Windows\system32]]></value>
+                        <value><![CDATA[C:\Windows\system32\migwiz\replacementmanifests]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky002.inf_amd64_neutral_525d9740c77e325f\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\prnky007.inf_amd64_neutral_e637699044f367f3\Amd64]]></value>
+                        <value><![CDATA[C:\Windows\system32\migwiz\dlmanifests]]></value>
+                        <value><![CDATA[C:\Windows\system32\catroot\{F750E6C3-38EE-11D1-85E5-00C04FC295EE}]]></value>
+                        <value><![CDATA[C:\Windows\system32\DriverStore\FileRepository\e1q62x64.inf_amd64_neutral_98080d3ef4ec5001]]></value>
+                    </string>
+                </key>
+                <key name="SortColumn">
+                    <string>
+                        <value><![CDATA[modified]]></value>
+                    </string>
+                </key>
+                <key name="SortDescending">
+                    <bool>
+                        <value>1</value>
+                    </bool>
+                </key>
+                <key name="VisibleColumns">
+                    <string minArraySize="0" maxArraySize="100">
+                        <value><![CDATA[icon]]></value>
+                        <value><![CDATA[name]]></value>
+                        <value><![CDATA[modified]]></value>
+                        <value><![CDATA[description]]></value>
+                    </string>
+                </key>
+            </settings>
+            <settings name="pathaffordance">
+                <key name="Enabled">
+                    <bool>
+                        <value>0</value>
+                    </bool>
+                </key>
+            </settings>
+        </settings>
+    </settings>
+</settings>

@@ -1,0 +1,20 @@
+#DRAG
+'Deallocate memory
+DA *[]
+'SPEED=-2000
+'SIZE=50
+'RATE=7
+SHA
+'Allocate memory and set up collect data
+DM DRAG[SIZE]
+RA DRAG[]
+RD _TTA
+'start motion and weight for a second to settle
+JG SPEED;BGA;WT 1000
+'start collecting every 2^RATE ms
+RC RATE
+'collecting data until done
+#A;JP #A,_RC=1
+'QU DRAG[];MG"";
+AB
+EN

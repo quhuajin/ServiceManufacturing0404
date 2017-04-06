@@ -1,0 +1,182 @@
+#BRAKE
+'=====================================
+' Brake test DMC subroutine
+' ** Input Variable (Preset in MATLAB)
+'      TRQLIM;  ' torque limit in Nm
+'      Kt;  ' Motor torque constant
+'      flag: Current ramping flag 1->postive -1->negative
+' ** Output Variable (used in MATLAB)
+'      TRQH: Brake holding torque (Nm)
+'      ecntR[]:   encoder count during ramp-up
+'      hstateR[]: hall states during ramp-up 
+'      ecntH[]:   encoder count during brake-hold
+'      hstateH[]: hall states during brake-hold
+MO
+
+OF 0.0; 'Zero the offset first
+' Setup ALLDONE flag
+ALLDONE=0
+'GET CURRENT CONTROLLER GAINS
+KPOLD = _KPA
+KDOLD = _KDA
+KIOLD = _KIA
+TLOLD = _TLA
+TKOLD = _TKA
+AMPG = _AGA 
+'..................................
+'SET GAINS TO ZERO FOR TORQUE MODE
+KP 0
+KD 0
+KI 0
+TL 7; 'SET Torque Limit
+AG 2; 'SET Amp Gain to highest value (1)
+WT 200
+VELLIMIT = 3000; 'Velocity limit for detecting motor movement
+'.....................
+' Read Amplifier gain
+AGAIN0= _AGA
+'.....................
+' Assign real Amp gain
+IF (AGAIN0=0.0)
+AGAIN= 0.4
+ENDIF
+IF (AGAIN0=1.0)
+AGAIN= 0.7
+ENDIF
+IF (AGAIN0=2.0)
+AGAIN= 1.0
+ENDIF
+'..........................
+' Compute Trq voltage limit
+VTLIM= TRQLIM/AGAIN/Kt
+
+' SET peak torque
+TK 9.8 ;    ' GALIL AMP hard limit 9.99 volt
+WT 10
+
+' Start servo mode
+SH A
+WT 30
+
+'------------------------------------------
+'SET GLOBAL varaibles for RAMPUP Subroutine
+TM 1000;   ' make sure sampling rate at 1000 hz
+period= _TM
+freq= 1/(period/1000000)
+nSP= 2;    ' ramp at every nSP samples
+rptime= 4;  ' ramp-up time
+hdtime= 0.2;  ' hold time
+nrup= @INT[rptime/(nSP/freq)]; ' approximate number of ramp-up
+nhld= @INT[hdtime/(nSP/freq)]; ' approximate samplig number of hold
+VTNOW = 0.0
+' set ramp-up increment
+IF (flag=1)
+INCR= VTLIM/nrup;     ' increment for positive ramping 
+ELSE
+INCR= -VTLIM/nrup;     ' increment for positive ramping
+ENDIF
+t0= TIME
+JS#RAMPUP
+'MG "elapsed time for up", t1-t0
+'MG "elapsed time for hold", t2-t1
+'MG "elapsed time for down", t3-t2
+VTNOWP= VTNOW
+
+'-----------------------------------
+' Calculate Torques (Used in MATLAB) 
+TRQH= VTNOWP*AGAIN*Kt
+
+'RESTORE ORIGINAL VALUES
+ALLDONE=1
+MO 
+KP KPOLD
+KD KDOLD
+KI KIOLD
+AG AMPG
+TL TLOLD
+TK TKOLD
+WT 10
+
+'MG "Brake Holding Test is Completed"
+
+EN;  ' end of MAIN Program
+
+'===========================
+' Star the ramping up loop
+#RAMPUP
+OFFSET = 0.0
+DONE = 0
+' Define Array
+DA *[]
+DM ecntR[nrup], hstateR[nrup], ecntH[nhld], hstateH[nhld]
+' start the loop
+cntR=0
+#LOOPP
+OF OFFSET
+WT nSP
+' record variables
+IF cntR<nrup
+ecntR[cntR]= _TPA
+hstateR[cntR]= _QHA
+ENDIF
+cntR= cntR+1
+'MG "Torque is ", _TTA, "volt"
+
+VTNOW= _TTA; ' current torque in volt
+IF (@ABS[VTNOW] > @ABS[VTLIM])
+t1= TIME
+' hold and record data
+cntH=0
+#hloop
+WT nSP
+ecntH[cntH]= _TPA
+hstateH[cntH]= _QHA
+cntH=cntH+1
+JP #hloop, cntH<nhld 
+t2= TIME
+' start ramping down
+JS#RAMPDW
+t3= TIME
+DONE = 1
+ENDIF
+
+IF (@ABS[_TVA] > VELLIMIT)
+'MG "TVA limit"
+JS#RAMPDW
+DONE = 1
+ENDIF
+
+'IF (@ABS[_TVB] > VELLIMIT)
+'MG "TVB Limit"
+'JS#RAMPDW
+'DONE = 1
+'ENDIF
+
+OFFSET = OFFSET + INCR
+IF (OFFSET> 9.8)
+OFFSET= 9.8 ; ' GALIL Amp peak torque hard limit 9.99 volt
+ENDIF
+
+JP #LOOPP, DONE < 1
+WT 300
+EN;  ' end of RAMPUP
+
+'============================
+' Start the Ramping down loop
+#RAMPDW
+OFFSET = _OFA
+OFNOW = _OFA;   ' current offset (volt)
+INCL = -2*INCR; 'local increment variable
+
+#LOOPN
+OF OFNOW
+WT nSP
+'MG "Torque is ", _TTA, "volt"
+OFNOW= _OFA 
+OFNOW = OFNOW + INCL
+JP #LOOPN, OFFSET*OFNOW >0
+
+OF 0.0
+WT 10
+'MG "Torque is ", _TTA, "volt"
+EN; ' end of RAMPDW 

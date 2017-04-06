@@ -1,0 +1,8 @@
+#A
+DONE = 0
+ALTB
+#LOOP
+JP #LOOP, _ALB=1
+RLB
+DONE = 1
+EN

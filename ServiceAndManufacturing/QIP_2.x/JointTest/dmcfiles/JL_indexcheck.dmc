@@ -1,0 +1,68 @@
+#IDXCHK
+' function to perform index and range of motion check
+' ** INPUT
+'    JOGSPEED: jogging speed
+'    nTrial: how many times the joint will run through ROM
+' ** OUTPUT (to be read from MATLAB)
+'    limpos[] : positive limits in count
+'    limneg[] : negative limits in count
+'    idxpos[] : index position (count) during positive movement
+'    idxneg[] : index position (count) during negative movement
+'JOGSPEED= 60000
+'nTrial= 2
+DONE=0
+' setup output variables
+DA *[]
+DM limpos[nTrial], limneg[nTrial], idxpos[nTrial], idxneg[nTrial]
+
+' start the loop
+cnt=0
+DONE_BS=0
+
+' move to bump1 first
+JS #BS_VEL
+' setup a loop to wait until BS_VEL finishes
+#lpw0
+JP #lpw0, DONE_BS<>1
+
+ALTB
+WT 10
+#loop
+JOGSPEED= -JOGSPEED
+JS #BS_VEL
+' setup a loop to wait until BS_VEL finishes
+#lpw
+JP #lpw, DONE_BS<>1
+' record latch position
+IF (JOGSPEED>=0)
+limpos[cnt]= _TPB
+idxpos[cnt]= _RLB
+cnt=cnt+1
+ELSE
+limneg[cnt]= _TPB
+idxneg[cnt]= _RLB
+ENDIF
+ALTB
+JP #loop, cnt< nTrial 
+DONE=1
+EN
+
+#BS_VEL
+' subroutine to go to bumpstop until velocity is detected 
+VELLMT = 2000
+DONE_BS = 0
+SHA
+JG JOGSPEED
+BGA
+WT 500
+'ASA;   ' wait until speed is reached   
+' loop to detect speed
+#lpv
+VEL = @ABS[_TVA]
+WT 10
+JP #lpv, VEL>VELLMT
+AB 1
+AM
+MO
+DONE_BS=1
+EN

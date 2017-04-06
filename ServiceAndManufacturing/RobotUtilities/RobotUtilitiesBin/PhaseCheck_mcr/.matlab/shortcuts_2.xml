@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FAVORITESROOT version="2">
+   <title>My Shortcuts</title>
+   <FAVORITECATEGORY>
+      <name>Help Browser Favorites</name>
+      <FAVORITE>
+         <label>Help Using the Desktop</label>
+         <icon>Help icon</icon>
+         <callback>helpview([docroot '/mapfiles/matlab_env.map'], 'matlabenvironment_desktop');</callback>
+         <editable>true</editable>
+      </FAVORITE>
+   </FAVORITECATEGORY>
+</FAVORITESROOT>

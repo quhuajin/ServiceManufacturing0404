@@ -1,0 +1,32 @@
+#STEP
+
+'INPUTS
+'STEPSIZE = 9000
+'SPEED = 10000000
+'COUNT = 10
+'WAIT = 100
+'LIMIT = 10000
+
+'INITIATION
+SH A
+SP SPEED
+WT 100
+N = 0
+DONE = 0
+
+#OSCLT
+PR STEPSIZE ;'Position Absolute 
+BG A        ;'Begin Motion A
+AM A        ;'After move A
+WT WAIT
+'TP A
+PR -STEPSIZE
+BG A
+AM A
+WT WAIT
+'TP A
+N = N + 1
+JP #OSCLT, N < COUNT
+'MG "COUNT COMPLET"
+DONE = 1
+EN

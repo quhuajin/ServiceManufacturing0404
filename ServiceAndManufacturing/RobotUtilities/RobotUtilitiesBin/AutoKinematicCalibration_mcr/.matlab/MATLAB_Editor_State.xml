@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Editor version="1.0">
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023212688" name="cartesianControl_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023586990" name="goToPosition_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023623999" name="frictionTst_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023645821" name="brakeTst_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023813087" name="holdPosition_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419024594862" name="voxGrid_object_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419024600835" name="jtPoint_object_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420473776185" name="homeMctrl_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420486797806" name="selfVibrate_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420486805334" name="example_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420490690899" name="currentTuning_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420495098279" name="homeSim_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420495104525" name="jointSpaceControl_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420495995924" name="test_moduleZerogravity.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420495999120" name="zerogravity_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420496002583" name="selfVibrateFS_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420496006463" name="impact_object_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420497921059" name="selfVibrateNShake_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420557747452" name="phasing_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420558866285" name="homeMakoAssist_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420560987664" name="homeAcrotews_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420572947465" name="homeAcromag_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420573011029" name="test_modulePlaybackHaptic.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420573136006" name="playBackPath_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420573954900" name="funnel_object_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420573968204" name="hapticKnob_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420576652944" name="hapticInteract_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420578430136" name="hgsServerFunctions_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420578435510" name="jointWall_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420579277349" name="controlModuleFunctions_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420579382967" name="refFrameFunctions_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420579574903" name="hapticObjectFunctions_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420582153129" name="test_moduleFrictionParameter.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420586477947" name="test_moduleJointWall.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420646976635" name="generalFunctions_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420646978012" name="playBackHaptic_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_Matlab_test" lastWrittenTime="1420646978928" name="TestCrisisAPI.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1420659621536" name="frictionParameter_module_test.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="D:\MfgAndTestSoftware\ServiceAndManufacturing\RobotUtilities\FieldHASSTest" lastWrittenTime="1434979848110" name="FieldHASSTest.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="D:\MfgAndTestSoftware\ServiceAndManufacturing\RobotUtilities\BrakeCheck" lastWrittenTime="1438716534056" name="brake_check.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="D:\MfgAndTestSoftware\ServiceAndManufacturing\Misc" lastWrittenTime="1438903577363" name="ServiceAndManufacturingMain.m">
+      <CodeFolds version="1.0">
+         <FoldType name="function">
+            <Fold endOffset="11579" startOffset="10824" state="collapsed"/>
+            <Fold endOffset="13071" startOffset="11812" state="collapsed"/>
+            <Fold endOffset="13770" startOffset="13286" state="collapsed"/>
+         </FoldType>
+      </CodeFolds>
+   </File>
+   <File absPath="D:\MfgAndTestSoftware\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber" lastWrittenTime="1438903584330" name="setArmSerialNumber.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="D:\MfgAndTestSoftware\ServiceAndManufacturing\QIP_2.x\HASS" lastWrittenTime="1438903586194" name="HASSTest.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\cygwin\home\test\CRISISAutotests\Matlab_automated" lastWrittenTime="1480625410453" name="hgsServerFunctions_test.m">
+      <CodeFolds version="1.0">
+         <FoldType name="function">
+            <Fold endOffset="3810" startOffset="2281" state="collapsed"/>
+            <Fold endOffset="5767" startOffset="3910" state="collapsed"/>
+            <Fold endOffset="6178" startOffset="5870" state="collapsed"/>
+            <Fold endOffset="8029" startOffset="6277" state="collapsed"/>
+            <Fold endOffset="8838" startOffset="8132" state="collapsed"/>
+            <Fold endOffset="10021" startOffset="8940" state="collapsed"/>
+            <Fold endOffset="10813" startOffset="10132" state="collapsed"/>
+         </FoldType>
+      </CodeFolds>
+   </File>
+   <File absPath="C:\cygwin\home\test\CRISISAutotests\Matlab_automated" lastWrittenTime="1481138342174" name="printXmlResults.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\MfgAndTestSoftware\trunk\ServiceAndManufacturing\RobotUtilities\AutoArmAccuracyCheck" lastWrittenTime="1488214728402" name="helloworld.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop" lastWrittenTime="1488295629372" name="helloworld.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="\\tsclient\C\Users\hqu\Desktop\MAKO31\ServiceAndManufacturing" lastWrittenTime="1488492297600" name="makeServiceMfgScripts.m">
+      <CodeFolds version="1.0">
+         <FoldType name="help-comments">
+            <Fold endOffset="1506" startOffset="124" state="collapsed"/>
+         </FoldType>
+      </CodeFolds>
+   </File>
+   <File absPath="C:\Users\test\Desktop\MfgAndTestSoftware\trunk\ServiceAndManufacturing" lastWrittenTime="1488577104446" name="makeServiceMfgScripts.m">
+      <CodeFolds version="1.0">
+         <FoldType name="try">
+            <Fold endOffset="2417" startOffset="2359" state="collapsed"/>
+         </FoldType>
+      </CodeFolds>
+   </File>
+   <File absPath="C:\Users\test\Desktop\MfgAndTestSoftware\trunk\ServiceAndManufacturing\RobotUtilities" lastWrittenTime="1488577106083" name="makeRobotUtilities.m">
+      <CodeFolds version="1.0"/>
+   </File>
+</Editor>

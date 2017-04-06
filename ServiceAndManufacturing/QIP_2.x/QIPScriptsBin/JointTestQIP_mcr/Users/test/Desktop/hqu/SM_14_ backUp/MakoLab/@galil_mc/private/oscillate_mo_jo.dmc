@@ -1,0 +1,78 @@
+' This Galil program is downloaded to the galil controller
+'  to execute controlled oscillations. It is called by the
+'  GALILOscillate script in MatLab 
+
+' **Input variables
+'   freq    - Oscillation frequency
+'   amp     - Oscillation amplitude
+'   time    - Oscillation time
+' **Output arrays
+'   MPOS   - Motor trajectory
+'   JPOS   - Joint trajectory
+'   T      - Time
+
+' Set Internal Variables
+atim=.0001
+omega=freq*2*3.1415926
+vel=omega*amp
+angle=time*freq*360
+
+' Start Angle
+angstart=-90
+
+' Check Angle-Magnitude Limit
+IF (amp*3600)>400000000
+  angl=360
+ELSE
+  angl=3600
+ENDIF
+
+' Calculate the number of cycles required
+'   given the angle limit of the CR command
+
+DONE = 0 
+
+IF (angle>angl)
+revs=@INT[angle/angl]
+ang=angl
+angler=revs*angl-angle
+anglr=@INT[angler/360]*360
+ELSE
+revs=1
+ang=angle
+anglr=0
+ENDIF
+
+'Data Collection Variables
+points=time/.002
+IF (time>5)
+points=5/.002
+ENDIF
+DA*[]
+DM MPOS[points],JPOS[points],JVEL[points],MVEL[points],TQA[points],T[points]
+RA MPOS[],JPOS[],MVEL[],JVEL[],TQA[],T[]
+RD _TPA,_TPB,_TVA,_TVB,_TTA,TIME
+
+rev=0
+VM AN
+VS vel
+VA vel/atim
+VD vel/atim
+'Executive loop
+#LOOP
+CR amp,angstart,ang
+rev=rev+1
+JP #LOOP,rev<revs
+RC 1
+BGS
+
+' Execute final oscillations
+IF anglr>0
+CR amp,angstart,anglr
+ENDIF
+
+VE
+AM
+DONE = 1
+
+EN

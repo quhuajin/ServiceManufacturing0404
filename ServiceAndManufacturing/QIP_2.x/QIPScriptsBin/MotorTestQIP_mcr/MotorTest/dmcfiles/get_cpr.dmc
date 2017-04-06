@@ -1,0 +1,13 @@
+#LATCH
+'Run twice, take diff to get cpr
+'cpr for MI, 65536
+DONE = 0
+SHA
+ALTA
+JG SPEED
+BGA
+#LOOP
+JP #LOOP, _ALA=1
+DONE = 1
+AB
+EN

@@ -1,0 +1,12 @@
+#A
+SHA
+JG10000
+BGA
+N = 0
+#B
+'TELL HALL STATE
+QHX
+N = N+1
+JP #B, N < 10
+'MG "DONE"
+EN

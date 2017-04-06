@@ -1,0 +1,56 @@
+% README $Revision: 1706 $  $Name: not supported by cvs2svn $
+%
+%	README	$Revision: 1706 $
+%
+% COPYRIGHT
+%	Copyright (c) 2007 Mako Surgical Corp.
+%
+% PURPOSE
+%	This is a collection of internal scripts
+%	and software required during the build and
+%	service schedule of the Hgs system
+%
+% CVS INFORMATION
+%	$Revision: 1706 $
+%	$Date: 2009-04-24 11:18:21 -0400 (Fri, 24 Apr 2009) $
+%	$Author: dmoses $
+%
+% TAG/CHANGE LOG (TOP LEVEL)
+%
+% ServiceMfg-0_15_beta
+%	* Label update to match SR
+%
+% ServiceMfg-0_13_beta
+%	* Bug fixes on Motor Controller Box Test (Bug #3265)
+%
+% ServiceMfg-0_12_beta
+%	* Updated default IP address for the robot to 172.16.16.100 based on
+%		feedback from IT
+%	* Bug fixes on Haptic gain test and Motor current bandwidth test
+%
+% ServiceMfg-0_11_beta
+%	* Reverted network setting back to 10.0.2.178 to allow completion of
+%		older scripts already in production.
+%	* Updated limits on Joint level testing for drag
+%
+% ServiceMfg-0_10_beta
+%	* Updated default IP address for the robot to 172.16.16.100 based on
+%		feedback from IT
+%
+% ServiceMfg-0_9_beta
+%	*  Updated paths for compiled version of J1-J3 for 
+%		Motor/Joint controller tests
+%
+% ServiceMfg-0_8_beta
+%	* Updated gains on J1-J3 for Motor/Joint controller tests for stability
+%
+% ServiceMfg-0_7_beta
+%	* Initial ECN release.
+%	* Number of bug fixes
+%	* Inclusion of GALIL and Microscribe in compilation scripts
+%	* Addition of Motor Current bandwidth test
+%
+% ServiceMfg-0_1_beta
+%	Initial release to Manufacturing
+%
+%-------- END OF FILE --------------

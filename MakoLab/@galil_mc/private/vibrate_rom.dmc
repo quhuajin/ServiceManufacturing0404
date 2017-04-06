@@ -1,0 +1,83 @@
+' vibrate_rom.dmc
+' This Galil program is downloaded to the galil controller
+'  to execute controllerd oscillations over the Range of Motion.
+'  It is called by the GALILVibrateROM script in MatLab 
+' **Input variables
+'   freq    - Oscillation frequency
+'   amp     - Oscillation amplitude
+'   grcycls - Number of gross cycles to execute
+'   limpos  - Positive position limit
+'   limneg  - Negative position limit
+' **Input parameters
+'   groper=40  - Gorss motion period
+'   steps=200  - Steps per range (of motion)
+
+' Calculate internal Variables
+hsteps=steps/2
+qsteps=steps/4
+atim=.0001
+omega=freq*2*3.1415926
+vel=omega*amp
+vibtim=groper/steps
+ang=freq*360*vibtim
+DONE = 0
+
+base= (limpos+limneg)/2
+stepint= (limpos-limneg)/hsteps
+
+' Other Motion variables
+    SP 20000000
+    AC 200000
+
+' Goto start (center) position
+PA base
+BG
+AM
+' Cycle loop
+loop = 0
+VM AN
+VS vel
+VA vel/atim
+VD vel/atim
+
+' Goto start (center) position
+step=0
+VP 0,amp
+BGS
+
+#CYCLOOP
+' 1/2 Forward iterations
+#FLOOP1
+CR amp,-90,ang
+step=step+1
+target = @INT[step*stepint]
+VP target,0
+JP #FLOOP1,step<(qsteps)
+
+' Reverse iterations
+#RLOOP
+CR amp,+90,ang
+step=step-1
+target = @INT[step*stepint]
+VP target,0
+JP #RLOOP,step>(-qsteps)
+
+' 2/2 Forward iterations
+#FLOOP2
+CR amp,-90,ang
+step=step+1
+target = @INT[step*stepint]
+VP target,0
+JP #FLOOP2,step<(0)
+
+' End cycle loop
+loop=loop+1
+JP #CYCLOOP,loop<grcycls
+VE
+
+SP 25000
+AC 256000
+
+AMS
+DONE = 1
+EN

@@ -1,0 +1,146 @@
+#BRAKE
+MO
+OF 0.0; 'Zero the offset first
+
+ALLDONE=0
+'GET CURRENT CONTROLLER GAINS
+KPOLD = _KPA
+KDOLD = _KDA
+KIOLD = _KIA
+TLOLD = _TLA
+TKOLD = _TKA
+AMPG = _AGA 
+
+'SET GAINS TO ZERO FOR TORQUE MODE
+KP 0
+KD 0
+KI 0
+TL 7; 'SET Torque Limit
+AG 2; 'SET Amp Gain to highest value (1)
+WT 1500
+VELLIMIT = 3000; 'Velocity limit for detecting motor movement
+
+'----------------------------
+' Variable Preset in MATLAB
+'TRQLIM= 6;  ' torque limit in Nm
+'Kt= 1.14;  ' Motor torque constant
+
+' Read Amplifier gain
+AGAIN0= _AGA
+
+' Assign real Amp gain
+IF (AGAIN0=0.0)
+AGAIN= 0.4
+ENDIF
+IF (AGAIN0=1.0)
+AGAIN= 0.7
+ENDIF
+IF (AGAIN0=2.0)
+AGAIN= 1.0
+ENDIF
+
+' Compute Trq voltage limit
+VTLIM= TRQLIM/AGAIN/Kt
+
+' SET peak torque
+TK 9.8;    'GALIL AMP peak torque limit 9.99 volt
+WT 100
+
+' Start servo mode
+SH A
+WT 500
+
+'------------------------------------------
+'SET GLOBAL varaibles for RAMPUP Subroutine
+VTNOW = 0.0
+INCR= 0.06;     ' increment for both ramping up and down
+JS#RAMPUP
+VTNOWP= VTNOW
+
+VTNOW = 0.0 
+INCR= -0.06;     ' increment for both ramping up and down
+JS#RAMPUP 
+VTNOWN= VTNOW
+
+'-----------------------------------
+' Calculate Torques (Used in MATLAB) 
+TRQPOS= VTNOWP*AGAIN*Kt
+TRQNEG= VTNOWN*AGAIN*Kt
+
+'RESTORE ORIGINAL VALUES
+ALLDONE=1
+MO 
+AG AMPG
+KP KPOLD
+KD KDOLD
+KI KIOLD
+TL TLOLD
+TK TKOLD
+WT 1500
+
+'MG "Brake Holding Test is Completed"
+
+EN;  ' end of MAIN Program
+
+'===========================
+' Star the ramping up loop
+#RAMPUP
+OFFSET = 0.0
+DONE = 0
+
+#LOOPP
+OF OFFSET
+WT 2
+
+'MG "Torque is ", _TTA, "volt"
+
+VTNOW= _TTA; ' current torque in volt
+IF (@ABS[VTNOW] > @ABS[VTLIM])
+TTA
+WT 200
+JS#RAMPDW
+DONE = 1
+ENDIF
+
+IF (@ABS[_TVA] > VELLIMIT)
+'MG "TVA limit"
+JS#RAMPDW
+DONE = 1
+ENDIF
+
+IF (@ABS[_TVB] > VELLIMIT)
+'MG "TVB Limit"
+JS#RAMPDW
+DONE = 1
+ENDIF
+
+OFFSET = OFFSET + INCR
+IF (OFFSET > 9.8)
+OFFSET = 9.8;   'GALIL AMP peak Torque limit 9.99 volt
+ENDIF
+
+
+JP #LOOPP, DONE < 1
+WT 300
+EN;  ' end of RAMPUP
+
+'============================
+' Start the Ramping down loop
+#RAMPDW
+OFFSET = _OFA
+OFNOW = _OFA;   ' current offset (volt)
+INCL = -INCR; 'local increment variable
+
+#LOOPN
+OF OFNOW
+WT 10
+'MG "Torque is ", _TTA, "volt"
+OFNOW= _OFA 
+OFNOW = OFNOW + INCL
+JP #LOOPN, OFFSET*OFNOW >0
+
+OF 0.0
+WT 50
+'MG "Torque is ", _TTA, "volt"
+EN; ' end of RAMPDW 
+

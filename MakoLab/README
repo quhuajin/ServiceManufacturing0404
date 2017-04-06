@@ -1,0 +1,74 @@
+PROJECT NAME:
+     MakoLab
+
+COPYRIGHT
+    Copyright (c) 2007 Mako Surgical Corp.
+
+PROJECT DESCRIPTION
+    The MakoLab toolbox is a MATLAB interface for CRISIS.  Currently the 
+    toolbox is setup only for the Windows Matlab environment. For 
+    information regarding commands and functions supported by this toolbox
+    type in 
+
+        >> help MakoLab
+
+    If developing or contributing to this Toolbox please refer to the 
+    DIRECTORY STRUCTURE below for information on where files need to be 
+    located.
+
+    Additional information and template m files are in available
+    in MAKO Twiki under MakoLab.
+    
+    For installation instructions please refer to the INSTALL file.
+
+DIRECTORY STRUCTURE
+    
+    TopLevelFolder
+        |    The toplevel folder will contain all the scripts and
+        |    functions that are available via the toolbox.  These
+        |    functions will be the interface to be used by 
+        |    developers for Service and Manfuacturing scripts and
+        |    commonly used functions (e.g. homing, resetRobot etc)
+        |
+        |----> development
+        |        This folder is for R&D type functions and
+        |        scripts.  These scripts MUST NOT be called
+        |        by any scripts in the TopLevelFolder or in 
+        |        any of the service and manufacturing scripts
+        |        These scripts are to be considered temporary
+        |        and will not be installed in productions 
+        |        environments.  This is the place to checkin
+        |        test scripts and experimental scripts.
+        |        If a script requires additional files 
+        |        (e.g. rom files or stl files) create a subdir
+        |        with the script name.  DONOT use files from 
+        |        other script folders.  Scripts in this folder
+        |        must be as "standalone" as possible.
+        |
+        |----> extern
+        |        Installation files or dependencies 
+        |        (e.g. specific compilers or libraries required
+        |        by the toolbox).
+        |
+        |----> mex
+        |        C-Mex files used by the toolbox
+        |
+        |----> @control_object
+        |        CRISIS control module object methods 
+        |
+        |----> @hgs_robot
+        |        Robot object methods
+        |
+        |----> @ndi_camera
+                 NDI Polaris Camera object methods
+
+    
+
+
+
+---------------------------
+CVS INFORMATION
+    $Revision: 1707 $
+    $Date: 2009-04-24 11:35:08 -0400 (Fri, 24 Apr 2009) $
+    $Author: dmoses $
+

@@ -1,0 +1,171 @@
+PROJECT NAME:
+     MakoLab
+
+CVS INFORMATION
+    $Name: not supported by cvs2svn $
+    $Revision: 2257 $
+    $Date: 2010-09-07 13:13:53 -0400 (Tue, 07 Sep 2010) $
+    $Author: dmoses $
+
+COPYRIGHT
+    Copyright (c) 2007 Mako Surgical Corp.
+
+--------------------------
+
+INSTALLATION INSTRUCTIONS
+    This package is supported only in the Windows environment.
+
+    PRE-REQUISITES
+        OS and SOFTWARE VERSION
+            This toolbox is supported only under Windows
+            Matlab version used is MATLAB R2006b or later
+
+        COMPILER and MEX SETUP
+            This set is required only once.  If mex has already 
+            been setup on your system, please ignore this section.
+            To check your mex compiler setup use the
+            >> mex -v
+	    
+	    Microsoft Visual C++ 2010 Compiler:
+	    	This is the recommended compiler for Makolab
+
+		Download and install the following packages
+	    	
+		* Microsoft Visual C++ 2010 Express edition
+			http://www.microsoft.com/express/Downloads/#2010-Visual-CPP	
+
+		* Microsoft Windows SDK
+			http://msdn.microsoft.com/en-us/windows/bb980924.aspx
+
+            Microsoft Visual C++ 2005 compiler:
+
+                Follow the instructions for installing and setting up
+                Microsoft VC Express for use with mex, included in the 
+                "MSVCExpress install instructions.pdf" in the extern 
+                folder of MakoLab or can be found at the following location.
+                /MakoLab/extern/MSVCExpress%20install%20insturctions.pdf?rev=HEAD&content-type=application/pdf
+
+                An iso of the required CD is also available on
+                the MakoLab twiki page.  The pdf is available 
+                
+                NOTE: Make sure you have the MSSDK environment variable set 
+                correctly (as per the pdf above).  You can set the environment
+                variable by right clicking on "My Computer", "properties" and 
+                selecting "Environment variables" under the "Advanced Tab". 
+
+
+                NOTE: Note the full SDK install is not necessary.  The 
+                appendix in the pdf file shows a much smaller and quicker
+                install.
+
+                mex setup for makolab should now be complete.
+
+                NOTE: a nice example for using the MVS debugger can be found
+                at 
+                http://www.mathworks.com/access/helpdesk/help/techdoc/matlab_external/f32489.html
+                
+        >> mex -setup
+
+                when prompted to select installer choose BCC.
+                and confirm by pressing 'Y'
+                
+        mex setup for makolab should now be complete.
+
+    FOR LINUX COMPUTERS
+        GCC compiler:
+        Installation of the GCC is beyond the scope of this document.  
+        Check if you already have a version of GCC installed
+        This can be done by typing the following on any xterm
+        
+        >> gcc --version
+
+        Matlab documentation states that GCC version 4.1 and greater is 
+        supported by Matlab 2007.  During the creation of this document 
+        ther version of gcc installed was 4.1.2
+
+        Once gcc installation is verified start matlab in linux
+        run the mex setup in matlab by typing
+
+        >> mex -setup
+
+        Select Y to locate all compilers installed on your machine and then 
+        select gcc from the list of compilers.  Select Y if prompted to create
+        or overwrite the mexopts.sh file
+
+        Now open the mexopts.sh file by typing the following in Matlab
+
+        >> open (fullfile(prefdir,'mexopts.sh'))
+
+        This should open a matlab editor with the mexopts file.  Now find and 
+        remove every instance of the word "-ansi" (without the quotes shown)
+
+        Save and exit.
+
+        mex setup for makolab should now be complete.
+
+
+    INSTALLATION
+        Check out the MakoLab onto your computer.  Refer to CVS setup
+        documentation for your CVS client on how to obtain this.
+
+        Add the MakoLab and its subdirectories into the Matlab path
+        This can be done by typing
+
+        >> addpath(genpath(MAKO_LAB_DIR))
+        OR
+        >> pathtool
+        
+        Where MAKO_LAB_DIR is the base directory where the MakoLab 
+        toolbox was downloaded.  pathtool will provide a GUI which can
+        be used to select the directories to be added.  The following 
+        directories must be selected.
+            * MakoLab
+            * MakoLab/mex
+
+        Once the path is setup type in
+        >> makemex
+
+        This should compile all the required mex files.
+
+        At this point installation is complete.  
+     
+     IMPORTANT NOTE
+        Please make sure that the firewall permits response to ping.  
+        Once connected to the server the server will send pings to 
+        check host status at regular intervals if there is no activity.
+
+        type
+        >> help MakoLab 
+        for documentation and supported functions.
+
+        makolabdemo.m shows a simple example utilizing the
+        MakoLab.
+            
+
+--------------------------
+$Log: not supported by cvs2svn $
+Revision 1.9  2008/04/29 19:03:59  dmoses
+Added link to the pdf to install VC++ for people who do not want to
+download Makolab before starting the install process
+
+Revision 1.8  2008/04/17 14:17:04  dmoses
+Updated makemex to automatically detect the correct
+directories and paths.  This will allow compilation from any directory
+as long as makemex is in the path.  Also updated the install instructions
+to reflect this change
+
+Revision 1.7  2008/02/29 05:14:55  dmoses
+Added instructions to install Makolab in Linux
+
+Revision 1.6  2008/02/29 03:47:46  dmoses
+Updated makemex to automatically adjust parameters depending on compiler
+installed.  This will also allow customization when going to linux and using
+gcc options in matlab.
+
+Revision 1.5  2008/01/18 17:25:32  dmoses
+Added instructions for using Microsoft VC++ compiler for MakoLab
+
+Revision 1.4  2007/11/30 07:40:06  dmoses
+Added cvs log and updated demo information
+
+----- END OF FILE ---------
