@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Editor version="1.0">
-   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023212688" name="cartesianControl_module_test.m">
-      <CodeFolds version="1.0"/>
-   </File>
-   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023586990" name="goToPosition_module_test.m">
-      <CodeFolds version="1.0"/>
-   </File>
-   <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023623999" name="frictionTst_module_test.m">
-      <CodeFolds version="1.0"/>
-   </File>
    <File absPath="C:\Users\test\Desktop\Tests\Automated_test_Matlab" lastWrittenTime="1419023645821" name="brakeTst_module_test.m">
       <CodeFolds version="1.0"/>
    </File>
@@ -172,6 +163,15 @@
       </CodeFolds>
    </File>
    <File absPath="C:\Users\test\Desktop\MfgAndTestSoftware\trunk\ServiceAndManufacturing\RobotUtilities" lastWrittenTime="1488577106083" name="makeRobotUtilities.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest" lastWrittenTime="1490801190200" name="FieldCutterTest.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldCutterTest\mfiles" lastWrittenTime="1490801190239" name="BurrStatusCheck.m">
+      <CodeFolds version="1.0"/>
+   </File>
+   <File absPath="C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldMotorBandwidthTest" lastWrittenTime="1490880154711" name="FieldMotorBandwidthTest.m">
       <CodeFolds version="1.0"/>
    </File>
 </Editor>

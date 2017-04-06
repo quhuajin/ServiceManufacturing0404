@@ -33,8 +33,8 @@ NOTE: You will need administrator rights to run MCRInstaller.
 
 Files to package for Standalone 
 ================================
--ViewRobotLogs.ctf (component technology file)
--ViewRobotLogs.exe
+-ArmStatusCheck.ctf (component technology file)
+-ArmStatusCheck.exe
 -MCRInstaller.exe 
    -if end users are unable to download the MCR using the above  
     link, include it when building your component by clicking 

@@ -20,9 +20,9 @@
 %    2. Brake Check
 %    3. Friction Check
 
-% $Author: hqu $
-% $Revision: 4161 $
-% $Date: 2017-03-31 15:38:21 -0400 (Fri, 31 Mar 2017) $
+% $Author: dmoses $
+% $Revision: 4149 $
+% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
 % Copyright: MAKO Surgical corp 2007
 
 function guiHandles=HASSTest(hgs,varargin)

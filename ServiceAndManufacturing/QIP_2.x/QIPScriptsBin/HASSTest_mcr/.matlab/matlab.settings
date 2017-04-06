@@ -18,26 +18,26 @@
         <settings name="currentfolder">
             <key name="History">
                 <string minArraySize="0" maxArraySize="500">
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\Misc]]></value>
                     <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x]]></value>
                     <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldHASSTest]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\Temp]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\CutterTest]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\CheckAngleDiscrepancy]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\BrakesTool]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x\CutterTest]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldMotorBandwidthTest]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\Misc]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x]]></value>
                     <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x\FootSwitchTest]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x\AnspachBoxTest]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\MakoLab]]></value>
                     <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\MakoLab\mex]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\ArmLogger]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\SetArmSerialNumber]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\CutterTest\mfiles]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\QIP_2.x\MotorBandwidthCheck]]></value>
-                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\CheckCfgFile]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\FieldMotorBandwidthCheck]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\LoadNGo]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\BrakeCheck]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\Misc]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing\RobotUtilities]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing\RobotUtilities\LoadNGo]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14\ServiceAndManufacturing\RobotUtilities\RobotUtilitiesBin]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing]]></value>
+                    <value><![CDATA[C:\Users\test\Desktop\hqu\SM_14_ backUp\ServiceAndManufacturing\RobotUtilities\RobotUtilitiesBin]]></value>
                 </string>
             </key>
             <settings name="autorefresh">
@@ -61,7 +61,7 @@
                 <key name="ColumnSizes">
                     <string minArraySize="0" maxArraySize="100000">
                         <value><![CDATA[40]]></value>
-                        <value><![CDATA[359]]></value>
+                        <value><![CDATA[290]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>
                         <value><![CDATA[0]]></value>

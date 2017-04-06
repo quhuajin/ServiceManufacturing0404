@@ -9,9 +9,9 @@ function guiHandles = find_friction_constants(hgs,varargin)
 %
 %
 %
-% $Author: hqu $
-% $Revision: 4159 $
-% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
+% $Author: dmoses $
+% $Revision: 4149 $
+% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
 % Copyright: MAKO Surgical corp 2007
 
 

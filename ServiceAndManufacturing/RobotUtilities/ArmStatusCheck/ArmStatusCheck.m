@@ -14,9 +14,9 @@ function guiHandles=ArmStatusCheck(hgs,varargin)
 % For RIO 3.1, anspach is removed, so there is no ansapch status check 
 %
 
-% $Author: hqu $
-% $Revision: 4159 $
-% $Date: 2017-03-31 15:28:51 -0400 (Fri, 31 Mar 2017) $
+% $Author: dmoses $
+% $Revision: 3739 $
+% $Date: 2015-01-16 17:38:50 -0500 (Fri, 16 Jan 2015) $
 % $Modified by: HQU  Date: 2017-01-13 16:28 $
 % Copyright: MAKO Surgical corp 2007
 

@@ -97,9 +97,9 @@ function MakoCtrlBoxTest(hgs,testMode)
 %
 
 %
-% $Author: hqu $
-% $Revision: 4161 $
-% $Date: 2017-03-31 15:38:21 -0400 (Fri, 31 Mar 2017) $
+% $Author: dmoses $
+% $Revision: 4149 $
+% $Date: 2015-09-28 14:30:33 -0400 (Mon, 28 Sep 2015) $
 % Copyright: MAKO Surgical corp (2008)
 %
 
@@ -163,7 +163,8 @@ end
 CPCIversion = questdlg({'This QIP requires an install of CRISIS depending on hardware version.', ...
     'To cancel, press the X in the upper right hand corner of this pop-up.'}, ...
     'Choose CPCI Hardware Version', ...
-    'RIO 2.0','RIO 2.2', 'RIO 3.0', 'RIO 3.0');
+   'RIO 3.0', 'RIO 3.1','RIO 3.1');
+
 % Handle response by grabbing correct image/file
 switch CPCIversion
     case 'RIO 2.0' % 2.0
@@ -199,57 +200,57 @@ switch CPCIversion
 end
 
 %% PUSH SELECTED DEFAULT CONFIG FILE ONTO CPCI VIA FTP CONNECTION
-
-% Open FTP connection
-try
-    ftpId = ftp2(targetName,'service','18thSeA');
-catch
-    error('Error connecting through FTP.');
-end
-        
-        
-% Copy default config file onto cpci
-try
-    % CD to config directory
-    cd(ftpId,CONFIGURATION_FILES_DIR);
-    pasv(ftpId);
-    
-    % Copy default config file to hgs as the current cfg file
-    cfgFilePath = which(defaultCfgFile);
-    ffn = fullfile(cfgFilePath);
-    copyfile(ffn,CFG_FILENAME,'f');
-    mput(ftpId,CFG_FILENAME);
-    
-    % Copy default config file to hgs as the default cfg file
-    copyfile(ffn,DEFAULT_CFG_FILENAME,'f');
-    mput(ftpId,DEFAULT_CFG_FILENAME);
-    
-    % clean up temp files
-    delete(CFG_FILENAME);
-    delete(DEFAULT_CFG_FILENAME);
-catch
-    close(ftpId);
-    error('Error loading default config file through FTP.');
-end
-
-% Close FTP connection
-close(ftpId);
+% 
+% % Open FTP connection
+% try
+%     ftpId = ftp2(targetName,'service','18thSeA');
+% catch
+%     error('Error connecting through FTP.');
+% end
+%         
+%         
+% % Copy default config file onto cpci
+% try
+%     % CD to config directory
+%     cd(ftpId,CONFIGURATION_FILES_DIR);
+%     pasv(ftpId);
+%     
+%     % Copy default config file to hgs as the current cfg file
+%     cfgFilePath = which(defaultCfgFile);
+%     ffn = fullfile(cfgFilePath);
+%     copyfile(ffn,CFG_FILENAME,'f');
+%     mput(ftpId,CFG_FILENAME);
+%     
+%     % Copy default config file to hgs as the default cfg file
+% %     copyfile(ffn,DEFAULT_CFG_FILENAME,'f');
+% %     mput(ftpId,DEFAULT_CFG_FILENAME);
+%     
+%     % clean up temp files
+%     delete(CFG_FILENAME);
+% %     delete(DEFAULT_CFG_FILENAME);
+% catch
+%     close(ftpId);
+%     error('Error loading default config file through FTP.');
+% end
+% 
+% % Close FTP connection
+% close(ftpId);
 
         
 %% INSTALL SELECTED SERVICE CRISIS IMAGE ONTO CPCI
-
-% close hgs if exists
-try
-    close(hgs);
-catch
-end
-
-% Use low level loadngo to install crisis
-try
-    response = load_arm_software_direct(host,svc_img);
-catch
-    error('Error loading arm software')
-end  
+% 
+% % close hgs if exists
+% try
+%     close(hgs);
+% catch
+% end
+% 
+% % Use low level loadngo to install crisis
+% try
+%     response = load_arm_software_direct(host,svc_img);
+% catch
+%     error('Error loading arm software')
+% end  
     
 %% GENERATE GUI AND CONTINUE WITH TEST
 guiHandles = generateMakoGui('Mako Controller Box Test',[],jobId,true);           
@@ -396,13 +397,13 @@ hgsBackup.DEFAULT_CONTROLLER = hgs.DEFAULT_CONTROLLER;
             if(strcmp(hgs.PERIPHERAL_SYSTEM,'pcm_anspach')==1)
                 hgs.PERIPHERAL_SYSTEM = {'Simulate'};
             else
-                hgs.PERIPHERAL_SYSTEM = {'simulate_ups', 'simulate_anspach', 'END'};
+                hgs.PERIPHERAL_SYSTEM = {'simulate_ups', 'END'};
             end
             hgs.DEFAULT_CONTROLLER = {'no_controller'};
             
             
-            restartCRISIS(hgs);
-            pause(1);
+%             restartCRISIS(hgs);
+%             pause(1);
             reconnect(hgs);
             
             
@@ -930,7 +931,7 @@ hgsBackup.DEFAULT_CONTROLLER = hgs.DEFAULT_CONTROLLER;
         hgs.TRACKING_SYSTEM = hgsBackup.TRACKING_SYSTEM;
         hgs.PERIPHERAL_SYSTEM = hgsBackup.PERIPHERAL_SYSTEM;
         hgs.DEFAULT_CONTROLLER = hgsBackup.DEFAULT_CONTROLLER;
-        restartCRISIS(hgs);
+%         restartCRISIS(hgs);
         updateMainButtonInfo(guiHandles,'text','Constants Restored');
     end
 end

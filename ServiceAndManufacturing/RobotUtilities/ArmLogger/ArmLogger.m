@@ -1,6 +1,7 @@
-function ArmLogger
+function ArmLogger 
+% 
 % ArmLogger wrapper function to view all robot variables
-%
+
 % Syntax:  
 %   ArmLogger
 %       Starts up the GUI to allow the user to view logs on the robot
